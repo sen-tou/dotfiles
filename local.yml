@@ -9,6 +9,21 @@
         update_cache: true
         upgrade: true
 
+- name: Setup global git vars 
+  hosts: localhost
+  become: no
+  tasks:
+    - name: setup git name
+      git_config:
+        name: user.name
+        scope: global
+        value: "Steve"
+    - name: setup git user email
+      git_config:
+        name: user.email
+        scope: global
+        value: stvbyr@users.noreply.github.com
+
 - name: Mount NAS 
   hosts: localhost
   become: true
@@ -89,8 +104,33 @@
   become: true
   connection: local
   tasks:
-    - name: Full system upgrade
+    - name: Install core/community packages
       community.general.pacman:
         name:
           - spotify-launcher
           - keepassxc
+          - neovim
+      
+    - name: Install aur packackages
+      yay:
+        name: visual-studio-code-bin
+
+- name: Enable iommu for systemd
+  hosts: localhost
+  become: true
+  connection: local
+  tasks:
+    - name: Find files that do not contain the word 'fallback'
+      find:
+        paths: "/efi/loader/entries"
+        patterns: "*.conf"
+        excludes: "*fallback*"
+        recurse: yes
+      register: result_files
+
+    - name: Add 'intel_iommu=on iommu=pt' to options line
+      ansible.builtin.replace:
+        path: "{{ item.path }}"
+        regexp: '^(options[^\n]*)(?<!intel_iommu=on iommu=pt)$'
+        replace: '\1 intel_iommu=on iommu=pt'
+      with_items: "{{ result_files.files }}"
