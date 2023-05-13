@@ -1,4 +1,6 @@
 ---
+- import_playbook: playbooks/Jason/init.yml
+
 - name: All hosts up-to-date
   hosts: all
   become: true
