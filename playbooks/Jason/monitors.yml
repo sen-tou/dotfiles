@@ -1,6 +1,6 @@
 ---
 - name: Setup Jason
-  hosts: all
+  hosts: Jason
   become: true
   connection: local
   tasks:
