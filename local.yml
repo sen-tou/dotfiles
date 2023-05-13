@@ -1,6 +1,6 @@
 ---
 - name: All hosts up-to-date
-  hosts: localhost
+  hosts: all
   become: true
   connection: local
   tasks:
@@ -10,7 +10,7 @@
         upgrade: true
 
 - name: Setup global git vars 
-  hosts: localhost
+  hosts: all
   become: no
   tasks:
     - name: setup git name
@@ -25,7 +25,7 @@
         value: stvbyr@users.noreply.github.com
 
 - name: Mount NAS 
-  hosts: localhost
+  hosts: all
   become: true
   connection: local
   tasks:
@@ -51,7 +51,7 @@
         fstype: fuse.sshfs
 
 # - name: Install KVM setup
-#   hosts: localhost
+#   hosts: all
 #   become: true
 #   connection: local
 #   tasks:
@@ -100,7 +100,7 @@
 #         append: yes
 
 - name: Install socials stuff
-  hosts: localhost
+  hosts: all
   become: true
   connection: local
   tasks:
@@ -118,7 +118,7 @@
           - gdm-settings 
 
 - name: Enable iommu for systemd
-  hosts: localhost
+  hosts: all
   become: true
   connection: local
   tasks:
