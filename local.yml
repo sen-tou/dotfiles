@@ -112,6 +112,7 @@
           - spotify-launcher
           - keepassxc
           - neovim
+          - alacritty
       
     - name: Install aur packackages
       yay:
