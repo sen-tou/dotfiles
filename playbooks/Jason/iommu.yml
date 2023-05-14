@@ -15,6 +15,19 @@
     - name: Add 'intel_iommu=on iommu=pt' to options line
       ansible.builtin.replace:
         path: "{{ item.path }}"
-        regexp: '^(options[^\n]*)(?<!intel_iommu=on iommu=pt)$'
+        regexp: '^(options\s(?!.*\bintel_iommu=on iommu=pt\b).*)$'
         replace: '\1 intel_iommu=on iommu=pt'
       with_items: "{{ result_files.files }}"
+
+    - name: Copy using inline content
+      ansible.builtin.copy:
+        content: "force_drivers+=\" vfio_pci vfio vfio_iommu_type1 \"\n"
+        dest: /etc/dracut.conf.d/10-vfio.conf
+      
+    - name: Copy using inline content
+      ansible.builtin.copy:
+        content: "options vfio-pci ids=10de:2782,10de:22bc\n"
+        dest: /etc/modprobe.d/vfio.conf
+      
+    - name: dracut-rebuild
+      ansible.builtin.raw: dracut-rebuild
