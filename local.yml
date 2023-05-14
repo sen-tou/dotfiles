@@ -101,7 +101,7 @@
         groups: libvirt-qemu
         append: yes
 
-- name: Install socials stuff
+- name: Install apps
   hosts: all
   become: true
   connection: local
