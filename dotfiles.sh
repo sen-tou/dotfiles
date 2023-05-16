@@ -39,7 +39,16 @@ if ! [ -f "$SSH_DIR/id_ed25519" ]; then
     ssh-keygen -t ed25519 -f "$SSH_DIR/id_ed25519" -C "$HOSTNAME@$USER" -N ""
     cat "$SSH_DIR/id_ed25519.pub" >> "$SSH_DIR/authorized_keys"
     chmod 600 "$SSH_DIR/authorized_keys"
-    ssh-copy-id -i ~/.ssh/id_ed25519.pub -p $NAS_PORT $NAS_USER@$NAS_HOST
+    ssh-copy-id -i "$SSH_DIR/id_ed25519.pub" -p $NAS_PORT $NAS_USER@$NAS_HOST
+        
+    tee -a "$SSH_DIR/config" <<EOF
+Host $NAS_HOST	
+    User=$NAS_USER 
+    Port=$NAS_PORT
+    StrictHostKeyChecking=no	
+    UserKnownHostsFile=/dev/null
+EOF
+
     eval "$(ssh-agent -s)"
 fi
 
@@ -58,4 +67,4 @@ cd $DIR
 
 # ansible-galaxy install -r requirements.yml
 
-ansible-playbook --diff local.yml -i ansible_hosts
+ANSIBLE_HOST_KEY_CHECKING=False ANSIBLE_CONFIG=./ansbible.cfg ansible-playbook --diff local.yml -i ansible_hosts
