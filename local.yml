@@ -1,6 +1,4 @@
 ---
-- import_playbook: playbooks/Jason/init.yml
-
 - name: All hosts up-to-date
   hosts: all
   become: true
@@ -31,17 +29,13 @@
   become: true
   connection: local
   tasks:
-    - name: Install core/community packages
-      community.general.pacman:
+    - name: Install packackages
+      yay:
         name:
           - spotify-launcher
           - keepassxc
           - neovim
-          - alacritty
-      
-    - name: Install aur packackages
-      yay:
-        name: 
+          - alacritty 
           - visual-studio-code-bin
           - gdm-settings 
 
@@ -120,3 +114,5 @@
         groups: libvirt-qemu
         append: yes
 
+- import_playbook: playbooks/Jason/init.yml
+- import_playbook: playbooks/All/steam.yml
