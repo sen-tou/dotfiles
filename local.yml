@@ -26,6 +26,25 @@
         scope: global
         value: stvbyr@users.noreply.github.com
 
+- name: Install apps
+  hosts: all
+  become: true
+  connection: local
+  tasks:
+    - name: Install core/community packages
+      community.general.pacman:
+        name:
+          - spotify-launcher
+          - keepassxc
+          - neovim
+          - alacritty
+      
+    - name: Install aur packackages
+      yay:
+        name: 
+          - visual-studio-code-bin
+          - gdm-settings 
+
 - name: Mount NAS 
   hosts: all
   become: true
@@ -100,23 +119,4 @@
         name: "{{ lookup('env', 'USER') }}"
         groups: libvirt-qemu
         append: yes
-
-- name: Install apps
-  hosts: all
-  become: true
-  connection: local
-  tasks:
-    - name: Install core/community packages
-      community.general.pacman:
-        name:
-          - spotify-launcher
-          - keepassxc
-          - neovim
-          - alacritty
-      
-    - name: Install aur packackages
-      yay:
-        name: 
-          - visual-studio-code-bin
-          - gdm-settings 
 
