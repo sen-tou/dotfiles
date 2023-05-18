@@ -1,1 +1,2 @@
 Jason ansible_connection=ssh
+Chester ansible_connection=ssh
