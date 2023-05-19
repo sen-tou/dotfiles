@@ -24,6 +24,7 @@
           - visual-studio-code-bin
           - gdm-settings 
           - htop
+          - nvidia-settings
 
 - import_playbook: playbooks/Jason/init.yml
 - import_playbook: playbooks/Chester/init.yml
