@@ -1,0 +1,27 @@
+---
+- name: Mount NAS 
+  hosts: all
+  become: true
+  connection: local
+  tasks:
+    - name: Install sshfs
+      community.general.pacman:
+        name:
+          - sshfs
+    - name: Add a line to a file if the file does not exist, without passing regexp
+      ansible.builtin.lineinfile:
+        path: /etc/fuse.conf
+        line: user_allow_other
+    - name: Add a line to a file if the file does not exist, without passing regexp
+      ansible.builtin.lineinfile:
+        path: /etc/fuse.conf
+        line: user_allow_other
+    - name: "setup /etc/fstab for {{ lookup('env', 'NAS_USER') }}@{{ lookup('env', 'NAS_HOST') }} on {{ lookup('env', 'NAS_PORT') }}"
+      mount:
+        src: "{{ lookup('env', 'NAS_USER') }}@{{ lookup('env', 'NAS_HOST') }}:/"
+        path: /mnt/nas
+        opts: "identityfile=/home/{{ lookup('env', 'USER') }}/.ssh/id_ed25519,x-systemd.automount,port={{ lookup('env', 'NAS_PORT') }},_netdev,default_permissions,allow_other"
+        boot: true
+        state: mounted
+        fstype: fuse.sshfs
+
