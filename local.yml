@@ -38,6 +38,7 @@
           - alacritty 
           - visual-studio-code-bin
           - gdm-settings 
+          - htop
 
 - name: Mount NAS 
   hosts: all
