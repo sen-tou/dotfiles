@@ -3,13 +3,26 @@
   hosts: all
   become: no
   tasks:
-    - name: setup git name
+    - name: Install git
+      yay:
+        name:
+          - git
+          - git-delta
+    - name: Apply git configuration
       git_config:
-        name: user.name
+        name: "{{ item.key }}"
+        value: "{{ item.value }}"
         scope: global
-        value: "Steve"
-    - name: setup git user email
-      git_config:
-        name: user.email
-        scope: global
-        value: stvbyr@users.noreply.github.com
+      loop: "{{ config | dict2items }}"  # https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#iterating-over-a-dictionary
+      vars:
+        config:
+          user.name: Steve
+          user.email: stvbyr@users.noreply.github.com
+          add.interactive.useBuiltin: false # required for git 2.37.0
+          core.pager: delta
+          delta.alwaysnavigate: true    # use n and N to move between diff sections
+          delta.alwayslight: false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+          diff.colorMoved: default
+          interactive.diffFilter: delta --color-only
+          merge.conflictstyle: diff3
+          include.path: ~/.gitconfig.local
