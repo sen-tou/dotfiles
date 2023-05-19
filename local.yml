@@ -115,4 +115,5 @@
         append: yes
 
 - import_playbook: playbooks/Jason/init.yml
+- import_playbook: playbooks/Chester/init.yml
 - import_playbook: playbooks/All/steam.yml
