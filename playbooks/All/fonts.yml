@@ -1,0 +1,9 @@
+---
+- name: Setup fonts
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install fonts
+      yay:
+        name:
+          - ttf-cascadia-code-nerd 
