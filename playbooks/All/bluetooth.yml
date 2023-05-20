@@ -1,0 +1,16 @@
+---
+- name: Setup global bluetooth
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install bluetooth
+      yay:
+        name:
+          - bluez 
+          - pulseaudio-bluez-utils 
+          - pulseaudio-bluetooth
+    - name: Enable bluetooth
+      systemd:
+        name: bluetooth
+        enabled: true
+        state: started

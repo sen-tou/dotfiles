@@ -1,5 +1,6 @@
 ---
 - import_playbook: git.yml
+- import_playbook: bluetooth.yml
 - import_playbook: steam.yml
 - import_playbook: lutris.yml
 - import_playbook: kvm.yml
