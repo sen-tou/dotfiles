@@ -1,2 +1,12 @@
-
 eval "$(starship init zsh)"
+
+if [ -f "$HOME/.path" ]; then
+    source "$HOME/.path"
+fi
+
+if [ -f "$HOME/.zaliases" ]; then
+    source "$HOME/.zaliases"
+fi
+
+DISABLE_AUTO_TITLE="true"
+HIST_STAMPS="yyyy-mm-dd"
