@@ -1,0 +1,9 @@
+# ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# git
+alias gco='git checkout'
+alias gcob='git checkout -b '
+alias gca='git commit -am '
