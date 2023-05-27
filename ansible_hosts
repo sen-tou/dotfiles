@@ -1,2 +1,2 @@
-Jason ansible_connection=ssh
-Chester ansible_connection=ssh
+Jason ansible_connection=ssh ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+Chester ansible_connection=ssh ansible_ssh_common_args='-o StrictHostKeyChecking=no'
