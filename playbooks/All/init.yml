@@ -6,6 +6,9 @@
 - import_playbook: fonts.yml
 - import_playbook: zsh.yml
 - import_playbook: steam.yml
+  when: ansible_virtualization_role == "host"
 - import_playbook: lutris.yml
+  when: ansible_virtualization_role == "host"
 - import_playbook: kvm.yml
+  when: ansible_virtualization_role == "host"
 - import_playbook: nas.yml
