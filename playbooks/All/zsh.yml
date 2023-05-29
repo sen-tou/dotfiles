@@ -16,4 +16,8 @@
       copy:
         src: "_dot_zshrc"
         dest: "{{ lookup('env', 'HOME') }}/.zshrc"
-    
+        owner: "{{ lookup('env', 'USER') }}"
+        mode: '0644'
+    - name: Source bash zshrc.
+      shell: source $HOME/.zshrc
+      become: no

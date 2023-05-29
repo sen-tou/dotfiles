@@ -1,13 +1,16 @@
 ---
 - name: Setup zsh
   hosts: all
-  become: yes
   tasks:
-    - name: Copy .zshrc
+    - name: Copy .zaliases
       copy:
         src: "_dot_aliases"
         dest: "{{ lookup('env', 'HOME') }}/.zaliases"
+        owner: "{{ lookup('env', 'USER') }}"
+        mode: '0644'
     - name: Copy .path
       copy:
         src: "_dot_path"
         dest: "{{ lookup('env', 'HOME') }}/.path"
+        owner: "{{ lookup('env', 'USER') }}"
+        mode: '0644'
