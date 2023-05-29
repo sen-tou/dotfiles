@@ -67,4 +67,4 @@ cd $DIR
 
 # ansible-galaxy install -r requirements.yml
 
-ANSIBLE_HOST_KEY_CHECKING=False ANSIBLE_CONFIG=./ansbible.cfg ansible-playbook --diff local.yml -i ansible_hosts
+ANSIBLE_CONFIG=./ansbible.cfg ansible-playbook --diff local.yml -i ansible_hosts

@@ -1,0 +1,20 @@
+---
+- name: Install Docker
+  hosts: all
+  become: true
+  tasks:
+    - name: Install dependencies
+      community.general.pacman:
+        name:
+          - docker
+          - docker-compose
+    - name: Enable docker
+      systemd:
+        name: docker
+        state: started
+        enabled: true
+    - name: Add the user {{ lookup('env', 'USER') }} to docker group
+      user:
+        name: "{{ lookup('env', 'USER') }}"
+        groups: docker
+        append: yes
