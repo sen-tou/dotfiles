@@ -1,0 +1,23 @@
+---
+- name: Setup Alacritty
+  hosts: all
+  tasks:
+    - name: ensures {{ lookup('env', 'HOME') }}/.config/alacritty dir exists
+      file: 
+        path: "{{ lookup('env', 'HOME') }}/.config/alacritty"
+        state: directory
+    - name: Copy alacritty.yml
+      copy:
+        src: "_dot_alacritty.yml"
+        dest: "{{ lookup('env', 'HOME') }}/.config/alacritty/alacritty.yml"
+        owner: "{{ lookup('env', 'USER') }}"
+        mode: '0644'
+- name: Install apps
+  hosts: all
+  become: true
+  connection: local
+  tasks:
+    - name: Install packackages
+      yay:
+        name:
+          - alacritty
