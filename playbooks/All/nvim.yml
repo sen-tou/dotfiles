@@ -1,0 +1,24 @@
+---
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+- name: Setup Nvim
+  hosts: all
+  tasks:
+    - name: ensures {{ lookup('env', 'HOME') }}/.config/nvim dir exists
+      file: 
+        path: "{{ lookup('env', 'HOME') }}/.config/nvim"
+        state: directory
+    - name: Copy nvim folder
+      copy:
+        src: "nvim/"
+        dest: "{{ lookup('env', 'HOME') }}/.config/nvim/"
+        owner: "{{ lookup('env', 'USER') }}"
+        mode: '0644'
+- name: Install apps
+  hosts: all
+  become: true
+  connection: local
+  tasks:
+    - name: Install packackages
+      yay:
+        name:
+          - neovim

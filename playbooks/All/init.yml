@@ -1,5 +1,6 @@
 ---
 - import_playbook: alacritty.yml
+- import_playbook: nvim.yml
 - import_playbook: copy.yml
 - import_playbook: git.yml
 - import_playbook: rust.yml

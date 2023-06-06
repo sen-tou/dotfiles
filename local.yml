@@ -19,7 +19,6 @@
         name:
           - spotify-launcher
           - keepassxc
-          - neovim
           - visual-studio-code-bin
           - gdm-settings 
           - htop
