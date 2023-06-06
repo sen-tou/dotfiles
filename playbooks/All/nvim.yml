@@ -1,5 +1,5 @@
 ---
-# git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim 
 - name: Setup Nvim
   hosts: all
   tasks:
@@ -13,6 +13,11 @@
         dest: "{{ lookup('env', 'HOME') }}/.config/nvim/"
         owner: "{{ lookup('env', 'USER') }}"
         mode: '0644'
+    - name: Install packer
+      ansible.builtin.git:
+        repo: "https://github.com/wbthomason/packer.nvim"
+        dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+        depth: 1
 - name: Install apps
   hosts: all
   become: true
