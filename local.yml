@@ -23,6 +23,8 @@
           - gdm-settings 
           - htop
           - nvidia-settings
+          - xclip
+          - tmux
 
 - import_playbook: playbooks/Jason/init.yml
 - import_playbook: playbooks/Chester/init.yml
