@@ -1,5 +1,7 @@
 eval "$(starship init zsh)"
 
+autoload -Uz compinit && compinit
+
 if [ -f "$HOME/.path" ]; then
     source "$HOME/.path"
 fi
