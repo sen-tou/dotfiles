@@ -8,6 +8,11 @@
       community.general.pacman:
         update_cache: true
         upgrade: true
+    - name: Full system upgrade (yay)
+      become: false
+      yay:
+        update_cache: true
+        upgrade: true
 
 - name: Install apps
   hosts: all
