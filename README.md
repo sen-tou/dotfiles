@@ -9,3 +9,5 @@ and running the script based on host name.
 Running:
 1. Copy config.skeleton to config and change the vars as needed
 2. run  `./dotfiles.sh` to let it run
+
+I'll add more information as I please. Please do not run this script. It is tailored to my setup.
