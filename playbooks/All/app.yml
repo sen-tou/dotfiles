@@ -1,0 +1,19 @@
+
+---
+- name: Install apps
+  hosts: all
+  become: true
+  connection: local
+  tasks:
+    - name: Install packackages
+      yay:
+        name:
+          - spotify-launcher
+          - keepassxc
+          - visual-studio-code-bin
+          - gdm-settings 
+          - htop
+          - nvidia-settings
+          - xclip
+          - tmux
+          - exa

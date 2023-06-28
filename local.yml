@@ -14,23 +14,6 @@
         update_cache: true
         upgrade: true
 
-- name: Install apps
-  hosts: all
-  become: true
-  connection: local
-  tasks:
-    - name: Install packackages
-      yay:
-        name:
-          - spotify-launcher
-          - keepassxc
-          - visual-studio-code-bin
-          - gdm-settings 
-          - htop
-          - nvidia-settings
-          - xclip
-          - tmux
-
 - import_playbook: playbooks/Jason/init.yml
 - import_playbook: playbooks/Chester/init.yml
 - import_playbook: playbooks/All/init.yml
