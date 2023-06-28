@@ -1,0 +1,22 @@
+---
+- name: Disable sleep/hybernate 
+  hosts: Jason
+  become: true
+  connection: local
+  tasks:
+    - name: Disable httpdsleep.target
+      ansible.builtin.systemd:
+        name: httpdsleep.target
+        masked: yes
+    - name: Disable suspend.target
+      ansible.builtin.systemd:
+        name: suspend.target
+        masked: yes
+    - name: Disable hibernate.target
+      ansible.builtin.systemd:
+        name: hibernate.target
+        masked: yes
+    - name: Disable hybrid-sleep.target
+      ansible.builtin.systemd:
+        name: hybrid-sleep.target
+        masked: yes

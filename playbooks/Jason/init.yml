@@ -1,3 +1,4 @@
 ---
 - import_playbook: monitors.yml
 - import_playbook: iommu.yml
+- import_playbook: disable-sleep.yml
