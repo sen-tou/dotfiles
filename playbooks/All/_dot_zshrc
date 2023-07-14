@@ -1,5 +1,6 @@
 eval "$(starship init zsh)"
 
+fpath+="$HOME/.zfunc"
 autoload -Uz compinit && compinit
 
 if [ -f "$HOME/.path" ]; then

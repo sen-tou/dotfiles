@@ -24,3 +24,16 @@
       shell: /tmp/sh.rustup.rs -y
       tags:
         - rust
+    - name: update rust
+      shell: rustup update
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: "{{ lookup('env', 'HOME') }}/.zfunc/"
+        owner: "{{ lookup('env', 'USER') }}"
+        state: directory
+        mode: '0755'
+    - name: setup completions
+      become: false
+      shell: "rustup completions zsh > {{ lookup('env', 'HOME') }}/.zfunc/_rustup"
+    
+    
