@@ -1,4 +1,3 @@
-
 ---
 - name: Install apps
   hosts: all
@@ -11,9 +10,10 @@
           - spotify-launcher
           - keepassxc
           - visual-studio-code-bin
-          - gdm-settings 
+          - gdm-settings
           - htop
           - nvidia-settings
           - xclip
           - tmux
           - exa
+          - obsidian
