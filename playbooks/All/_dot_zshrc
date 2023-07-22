@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 fpath+="$HOME/.zfunc"
 autoload -Uz compinit && compinit
