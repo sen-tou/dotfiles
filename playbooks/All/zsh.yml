@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - name: Install zsh
-      yay:
+      kewlfft.aur.aur:
         name:
           - zsh
           - starship
@@ -17,7 +17,4 @@
         src: "_dot_zshrc"
         dest: "{{ lookup('env', 'HOME') }}/.zshrc"
         owner: "{{ lookup('env', 'USER') }}"
-        mode: '0644'
-    - name: Source bash zshrc.
-      shell: source $HOME/.zshrc
-      become: no
+        mode: "0644"

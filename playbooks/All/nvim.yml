@@ -1,10 +1,10 @@
 ---
-# git clone --depth 1 https://github.com/wbthomason/packer.nvim 
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim
 - name: Setup Nvim
   hosts: all
   tasks:
     - name: ensures {{ lookup('env', 'HOME') }}/.config/nvim dir exists
-      file: 
+      file:
         path: "{{ lookup('env', 'HOME') }}/.config/nvim"
         state: directory
     - name: Copy nvim folder
@@ -12,7 +12,7 @@
         src: "nvim/"
         dest: "{{ lookup('env', 'HOME') }}/.config/nvim/"
         owner: "{{ lookup('env', 'USER') }}"
-        mode: '0644'
+        mode: "0644"
     - name: Install packer
       ansible.builtin.git:
         repo: "https://github.com/wbthomason/packer.nvim"
@@ -24,6 +24,6 @@
   connection: local
   tasks:
     - name: Install packackages
-      yay:
+      kewlfft.aur.aur:
         name:
           - neovim

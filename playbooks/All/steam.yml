@@ -5,7 +5,7 @@
   connection: local
   tasks:
     - name: Install steam related packages
-      yay:
+      kewlfft.aur.aur:
         name:
           - steam
           - game-devices-udev

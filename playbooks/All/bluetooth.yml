@@ -4,10 +4,10 @@
   become: yes
   tasks:
     - name: Install bluetooth
-      yay:
+      kewlfft.aur.aur:
         name:
-          - bluez 
-          - pulseaudio-bluez-utils 
+          - bluez
+          - pulseaudio-bluez-utils
           - pulseaudio-bluetooth
     - name: Enable bluetooth
       systemd:
