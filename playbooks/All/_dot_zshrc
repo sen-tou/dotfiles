@@ -12,5 +12,10 @@ if [ -f "$HOME/.zaliases" ]; then
     source "$HOME/.zaliases"
 fi
 
-DISABLE_AUTO_TITLE="true"
-HIST_STAMPS="yyyy-mm-dd"
+export DISABLE_AUTO_TITLE="true"
+export HIST_STAMPS="yyyy-mm-dd"
+export HISTFILE=~/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
