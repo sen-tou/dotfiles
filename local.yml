@@ -8,7 +8,7 @@
       become: false
       kewlfft.aur.aur:
         upgrade: yes
-        use: pacman
+        use: auto
         update_cache: yes
 
 - import_playbook: playbooks/All/init.yml
