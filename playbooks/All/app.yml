@@ -1,7 +1,6 @@
 ---
 - name: Install apps
   hosts: all
-  become: true
   connection: local
   tasks:
     - name: Install packackages
