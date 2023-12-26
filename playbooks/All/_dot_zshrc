@@ -1,3 +1,17 @@
+export DISABLE_AUTO_TITLE="true"
+export HIST_STAMPS="yyyy-mm-dd"
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+setopt INC_APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt SHARE_HISTORY 
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
@@ -11,11 +25,3 @@ fi
 if [ -f "$HOME/.zaliases" ]; then
     source "$HOME/.zaliases"
 fi
-
-export DISABLE_AUTO_TITLE="true"
-export HIST_STAMPS="yyyy-mm-dd"
-export HISTFILE=~/.zsh_history
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
-setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
