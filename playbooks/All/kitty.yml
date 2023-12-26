@@ -1,0 +1,31 @@
+---
+- name: Setup Kitty
+  hosts: all
+  tasks:
+    - name: ensures {{ lookup('env', 'HOME') }}/.config/kitty dir exists
+      file:
+        path: "{{ lookup('env', 'HOME') }}/.config/kitty"
+        state: directory
+    - name: Copy kitty.conf
+      copy:
+        src: "_dot_kitty.conf"
+        dest: "{{ lookup('env', 'HOME') }}/.config/kitty/kitty.conf"
+        owner: "{{ lookup('env', 'USER') }}"
+        mode: "0644"
+- name: Install Kitty
+  hosts: all
+  become: true
+  connection: local
+  tasks:
+    - name: Install packackages
+      pacman:
+        executable: yay
+        name:
+          - kitty
+    - name: remove packackages
+      pacman:
+        executable: yay
+        name:
+          - alacritty
+          - gnome-terminal
+        state: removed
