@@ -1,13 +1,14 @@
 ---
-- name: Mount NAS 
+- name: Mount NAS
   hosts: all
   become: true
   connection: local
   tasks:
     - name: Install sshfs
-      community.general.pacman:
+      pacman:
         name:
           - sshfs
+        executable: yay
     - name: Add a line to a file if the file does not exist, without passing regexp
       ansible.builtin.lineinfile:
         path: /etc/fuse.conf
@@ -24,4 +25,3 @@
         boot: true
         state: mounted
         fstype: fuse.sshfs
-

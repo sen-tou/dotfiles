@@ -4,10 +4,11 @@
   become: yes
   tasks:
     - name: Install zsh
-      kewlfft.aur.aur:
+      pacman:
         name:
           - zsh
           - starship
+        executable: yay
     - name: Change default shell to zsh
       user:
         name: "{{ lookup('env', 'USER') }}"

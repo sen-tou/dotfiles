@@ -4,10 +4,11 @@
   become: true
   tasks:
     - name: Install dependencies
-      community.general.pacman:
+      pacman:
         name:
           - docker
           - docker-compose
+        executable: yay
     - name: Enable docker
       systemd:
         name: docker

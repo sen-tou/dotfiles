@@ -24,6 +24,7 @@
   connection: local
   tasks:
     - name: Install packackages
-      kewlfft.aur.aur:
+      pacman:
         name:
           - neovim
+        executable: yay

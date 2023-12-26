@@ -4,7 +4,7 @@
   connection: local
   tasks:
     - name: Install packackages
-      kewlfft.aur.aur:
+      pacman:
         name:
           - spotify-launcher
           - keepassxc
@@ -17,3 +17,4 @@
           - exa
           - obsidian
           - zoxide
+        executable: yay

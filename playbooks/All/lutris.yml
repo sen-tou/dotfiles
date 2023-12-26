@@ -5,7 +5,7 @@
   connection: local
   tasks:
     - name: Install lutris related packages
-      kewlfft.aur.aur:
+      pacman:
         name:
           - lutris
           - wine-staging

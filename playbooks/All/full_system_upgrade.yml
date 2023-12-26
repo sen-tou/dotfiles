@@ -1,0 +1,12 @@
+---
+- name: All hosts up-to-date
+  hosts: all
+  become: true
+  connection: local
+  tasks:
+    - name: Full system upgrade (yay)
+      become: true
+      pacman:
+        executable: yay
+        upgrade: yes
+        update_cache: yes

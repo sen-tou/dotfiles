@@ -5,8 +5,9 @@
   connection: local
   tasks:
     - name: Install steam related packages
-      kewlfft.aur.aur:
+      pacman:
         name:
           - steam
           - game-devices-udev
           - gamemode
+        executable: yay
