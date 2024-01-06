@@ -2,7 +2,7 @@
 - import_playbook: yay.yml
 - import_playbook: full_system_upgrade.yml
 - import_playbook: app.yml
-- import_playbook: alacritty.yml
+- import_playbook: kitty.yml
 - import_playbook: nvim.yml
 - import_playbook: copy.yml
 - import_playbook: git.yml
