@@ -1,17 +1,28 @@
 ---
 - name: Setup Kitty
   hosts: all
+  vars:
+    theme_folder: ~/.config/kitty/kitty-themes/themes
+    theme: gruvbox_dark.conf
   tasks:
     - name: ensures {{ lookup('env', 'HOME') }}/.config/kitty dir exists
       file:
         path: "{{ lookup('env', 'HOME') }}/.config/kitty"
         state: directory
     - name: Copy kitty.conf
-      copy:
+      template:
         src: "_dot_kitty.conf"
         dest: "{{ lookup('env', 'HOME') }}/.config/kitty/kitty.conf"
         owner: "{{ lookup('env', 'USER') }}"
         mode: "0644"
+    - name: theme folder exists
+      file:
+        path: "{{ theme_folder }}"
+        state: directory
+    - name: install theme
+      get_url:
+        url: "https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/{{ theme }}"
+        dest: "{{ theme_folder }}"
 - name: Install Kitty
   hosts: all
   become: true
