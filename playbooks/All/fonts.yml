@@ -7,4 +7,5 @@
       pacman:
         name:
           - ttf-cascadia-code-nerd
+          - ttf-terminus-nerd
         executable: yay
