@@ -12,9 +12,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY 
 
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-
 fpath+="$HOME/.zfunc"
 autoload -Uz compinit && compinit
 
@@ -25,3 +22,9 @@ fi
 if [ -f "$HOME/.zaliases" ]; then
     source "$HOME/.zaliases"
 fi
+
+# plugins
+[ -f {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && source {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

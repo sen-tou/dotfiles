@@ -1,5 +1,5 @@
 ---
-- name: Setup zsh
+- name: Install zsh
   hosts: all
   become: yes
   tasks:
@@ -13,8 +13,13 @@
       user:
         name: "{{ lookup('env', 'USER') }}"
         shell: /usr/bin/zsh
+- name: Setup zsh
+  hosts: all
+  vars:
+    plugin_dir: "{{ playbook_dir }}/zsh_plugins"
+  tasks:
     - name: Copy .zshrc
-      copy:
+      template:
         src: "_dot_zshrc"
         dest: "{{ lookup('env', 'HOME') }}/.zshrc"
         owner: "{{ lookup('env', 'USER') }}"
