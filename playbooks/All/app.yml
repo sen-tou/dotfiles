@@ -16,4 +16,5 @@
           - tmux
           - exa
           - obsidian
+          - fzf
         executable: yay

@@ -33,6 +33,13 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 # plugins
 [ -f {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && source {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 [ -f {{ plugin_dir }}/z/zsh-z.plugin.zsh ] && source {{ plugin_dir }}/z/zsh-z.plugin.zsh
+# fzf
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+
+
 autoload -Uz compinit && compinit
+
+
 
 eval "$(starship init zsh)"
