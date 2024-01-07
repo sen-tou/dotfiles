@@ -25,6 +25,7 @@ fi
 
 # plugins
 [ -f {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && source {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+[ -f {{ plugin_dir }}/z/zsh-z.plugin.zsh ] && source {{ plugin_dir }}/z/zsh-z.plugin.zsh
+autoload -Uz compinit && compinit
 
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"

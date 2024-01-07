@@ -16,5 +16,4 @@
           - tmux
           - exa
           - obsidian
-          - zoxide
         executable: yay

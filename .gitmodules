@@ -1,3 +1,6 @@
 [submodule "playbooks/All/zsh_plugins/fast-syntax-highlighting"]
 	path = playbooks/All/zsh_plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+[submodule "playbooks/All/zsh_plugins/z"]
+	path = playbooks/All/zsh_plugins/z
+	url = https://github.com/agkozak/zsh-z.git
