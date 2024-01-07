@@ -4,3 +4,6 @@
 [submodule "playbooks/All/zsh_plugins/z"]
 	path = playbooks/All/zsh_plugins/z
 	url = https://github.com/agkozak/zsh-z.git
+[submodule "playbooks/All/zsh_plugins/abbr"]
+	path = playbooks/All/zsh_plugins/abbr
+	url = https://github.com/olets/zsh-abbr.git

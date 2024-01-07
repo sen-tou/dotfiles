@@ -2,21 +2,15 @@
 - name: Setup zsh
   hosts: all
   tasks:
-    - name: Copy .zaliases
-      copy:
-        src: "_dot_aliases"
-        dest: "{{ lookup('env', 'HOME') }}/.zaliases"
-        owner: "{{ lookup('env', 'USER') }}"
-        mode: '0644'
     - name: Copy .path
       copy:
         src: "_dot_path"
         dest: "{{ lookup('env', 'HOME') }}/.path"
         owner: "{{ lookup('env', 'USER') }}"
-        mode: '0644'
+        mode: "0644"
     - name: Copy .tmux.conf
       copy:
         src: "_dot_tmux.conf"
         dest: "{{ lookup('env', 'HOME') }}/.tmux.conf"
         owner: "{{ lookup('env', 'USER') }}"
-        mode: '0644'
+        mode: "0644"
