@@ -6,7 +6,7 @@
 	url = https://github.com/agkozak/zsh-z.git
 [submodule "playbooks/All/zsh_plugins/abbr"]
 	path = playbooks/All/zsh_plugins/abbr
-	url = https://github.com/olets/zsh-abbr.git
+	url = https://github.com/olets/zsh-abbr
 [submodule "playbooks/All/zsh_plugins/autosuggestions"]
 	path = playbooks/All/zsh_plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
