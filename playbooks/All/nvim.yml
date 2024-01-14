@@ -7,17 +7,7 @@
       file:
         path: "{{ lookup('env', 'HOME') }}/.config/nvim"
         state: directory
-    - name: Copy nvim folder
-      copy:
-        src: "nvim/"
-        dest: "{{ lookup('env', 'HOME') }}/.config/nvim/"
-        owner: "{{ lookup('env', 'USER') }}"
-        mode: "0644"
-    - name: Install packer
-      ansible.builtin.git:
-        repo: "https://github.com/wbthomason/packer.nvim"
-        dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
-        depth: 1
+
 - name: Install apps
   hosts: all
   become: true
