@@ -1,0 +1,10 @@
+---
+- name: setup PHP
+  hosts: all
+  connection: local
+  tasks:
+    - name: Install PHP
+      kewlfft.aur.aur: 
+        name:
+          - php
+        state: latest

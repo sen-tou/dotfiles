@@ -16,4 +16,5 @@
           - exa
           - obsidian
           - fzf
+          - fzy
         executable: yay
