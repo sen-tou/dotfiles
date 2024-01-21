@@ -7,4 +7,5 @@
       kewlfft.aur.aur: 
         name:
           - php
+          - composer
         state: latest
