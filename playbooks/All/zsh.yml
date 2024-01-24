@@ -24,3 +24,9 @@
         dest: "{{ lookup('env', 'HOME') }}/.zshrc"
         owner: "{{ lookup('env', 'USER') }}"
         mode: "0644"
+    - name: Copy starship.toml
+      template:
+        src: "starship.toml"
+        dest: "{{ lookup('env', 'HOME') }}/.config/starship.toml"
+        owner: "{{ lookup('env', 'USER') }}"
+        mode: "0644"
