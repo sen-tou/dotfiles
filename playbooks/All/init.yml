@@ -7,6 +7,7 @@
 - import_playbook: copy.yml
 - import_playbook: git.yml
 - import_playbook: php.yml
+- import_playbook: python.yml
 - import_playbook: rust.yml
 - import_playbook: bluetooth.yml
 - import_playbook: fonts.yml

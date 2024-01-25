@@ -1,0 +1,12 @@
+---
+- name: setup python
+  hosts: all
+  connection: local
+  tasks:
+    - name: Install python
+      kewlfft.aur.aur: 
+        name:
+          - python
+          - python-pip
+          - python-pynvim
+        state: latest
