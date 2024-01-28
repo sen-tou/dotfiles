@@ -4,12 +4,11 @@
   connection: local
   tasks:
     - name: Install packackages
-      pacman:
+      kewlfft.aur.aur: 
         name:
           - spotify-launcher
           - keepassxc
           - visual-studio-code-bin
-          - gdm-settings
           - htop
           - nvidia-settings
           - xclip
@@ -17,4 +16,3 @@
           - obsidian
           - fzf
           - fzy
-        executable: yay
