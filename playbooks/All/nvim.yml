@@ -17,3 +17,4 @@
       kewlfft.aur.aur: 
         name:
           - neovim
+          - xdg-desktop-portal

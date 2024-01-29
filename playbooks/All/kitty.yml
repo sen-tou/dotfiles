@@ -2,8 +2,8 @@
 - name: Setup Kitty
   hosts: all
   vars:
-    theme_folder: ~/.config/kitty/kitty-themes/themes
-    theme: gruvbox_dark.conf
+    theme_folder: ~/.config/kitty/kitty-themes
+    theme: rose-pine/rose-pine.conf
   tasks:
     - name: ensures {{ lookup('env', 'HOME') }}/.config/kitty dir exists
       file:
@@ -19,10 +19,6 @@
       file:
         path: "{{ theme_folder }}"
         state: directory
-    - name: install theme
-      get_url:
-        url: "https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/{{ theme }}"
-        dest: "{{ theme_folder }}"
 - name: Install Kitty
   hosts: all
   become: true
