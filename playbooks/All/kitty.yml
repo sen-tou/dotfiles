@@ -2,23 +2,25 @@
 - name: Setup Kitty
   hosts: all
   vars:
-    theme_folder: ~/.config/kitty/kitty-themes
+    theme_folder: "{{ lookup('env', 'HOME') }}/.config/kitty/kitty-themes"
     theme: rose-pine/rose-pine.conf
   tasks:
-    - name: ensures {{ lookup('env', 'HOME') }}/.config/kitty dir exists
+    - name: Create kitty dirs recursivly
       file:
-        path: "{{ lookup('env', 'HOME') }}/.config/kitty"
+        path: "{{ lookup('env', 'HOME') }}/.config/kitty/{{ item.path }}"
         state: directory
-    - name: Copy kitty.conf
-      template:
-        src: "_dot_kitty.conf"
-        dest: "{{ lookup('env', 'HOME') }}/.config/kitty/kitty.conf"
         owner: "{{ lookup('env', 'USER') }}"
-        mode: "0644"
-    - name: theme folder exists
-      file:
-        path: "{{ theme_folder }}"
-        state: directory
+        mode: "{{ item.mode }}"
+      with_filetree: kitty/
+      when: item.state == 'directory'
+    - name: Move config files into place
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ lookup('env', 'HOME') }}/.config/kitty/{{ item.path }}"
+        force: yes
+        owner: "{{ lookup('env', 'USER') }}"
+      with_filetree: kitty/
+      when: item.state == 'file'
 - name: Install Kitty
   hosts: all
   become: true
