@@ -10,6 +10,7 @@
 - import_playbook: python.yml
 - import_playbook: rust.yml
 - import_playbook: bluetooth.yml
+- import_playbook: sound.yml
 - import_playbook: fonts.yml
 - import_playbook: zsh.yml
 - import_playbook: docker.yml

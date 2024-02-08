@@ -1,0 +1,14 @@
+---
+- name: Setup sound
+  hosts: all
+  tasks:
+    - name: Install packages
+      kewlfft.aur.aur: 
+        name:
+          - pipewire
+          - pipewire-docs
+          - wireplumber
+          - qpwgraph
+          - pipewire-audio
+          - pipewire-alsa
+        state: latest
