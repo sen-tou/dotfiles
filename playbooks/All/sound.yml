@@ -11,4 +11,6 @@
           - qpwgraph
           - pipewire-audio
           - pipewire-alsa
+          - pipewire-pulse
+          - pw-volume
         state: latest

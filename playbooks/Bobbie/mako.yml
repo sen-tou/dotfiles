@@ -1,0 +1,9 @@
+---
+- name: Setup mako
+  hosts: all
+  connection: local
+  tasks:
+    - name: install packages
+      kewlfft.aur.aur: 
+        name:
+          - mako
