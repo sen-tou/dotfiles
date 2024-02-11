@@ -21,13 +21,10 @@
       when: item.state == 'file'
 - name: Install apps
   hosts: all
-  become: true
   connection: local
   tasks:
     - name: Install packackages
       kewlfft.aur.aur: 
         name:
           - neovim
-          - xdg-desktop-portal
-          - xclip
-          - wl-clipboard
+          - ripgrep
