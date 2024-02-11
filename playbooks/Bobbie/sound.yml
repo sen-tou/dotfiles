@@ -12,5 +12,11 @@
           - pipewire-audio
           - pipewire-alsa
           - pipewire-pulse
-          - pw-volume
+          - pavucontrol
         state: latest
+    - name: Move auto switch on connect conf
+      become: true
+      copy:
+        src: "etc/xdg/xdg-desktop-portal/Hyprland-portals.conf"
+        dest: "/etc/xdg/xdg-desktop-portal/Hyprland-portals.conf"
+        mode: "0644"

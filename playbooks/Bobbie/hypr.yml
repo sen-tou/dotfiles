@@ -13,7 +13,7 @@
     - name: Move desktop portal conf
       become: true
       copy:
-        src: "Hyprland-portals.conf"
-        dest: "/etc/xdg/xdg-desktop-portal/Hyprland-portals.conf"
+        src: "etc/pipewire/pipewire-pulse.conf.d/switch-on-connect-device.conf"
+        dest: "/etc/pipewire/pipewire-pulse.conf.d/switch-on-connect-device.conf"
         mode: "0644"
 
