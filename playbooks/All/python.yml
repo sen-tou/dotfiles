@@ -5,8 +5,8 @@
   tasks:
     - name: Install python
       kewlfft.aur.aur: 
+        use: yay
         name:
           - python
           - python-pip
           - python-pynvim
-        state: latest

@@ -2,29 +2,12 @@
 # git clone --depth 1 https://github.com/wbthomason/packer.nvim
 - name: Setup Nvim
   hosts: all
-  tasks:
-    - name: Create nvim dirs recursivly
-      file:
-        path: "{{ lookup('env', 'HOME') }}/.config/nvim/{{ item.path }}"
-        state: directory
-        owner: "{{ lookup('env', 'USER') }}"
-        mode: "{{ item.mode }}"
-      with_filetree: nvim/
-      when: item.state == 'directory'
-    - name: Move config files into place
-      template:
-        src: "{{ item.src }}"
-        dest: "{{ lookup('env', 'HOME') }}/.config/nvim/{{ item.path }}"
-        force: yes
-        owner: "{{ lookup('env', 'USER') }}"
-      with_filetree: nvim/
-      when: item.state == 'file'
-- name: Install apps
-  hosts: all
   connection: local
   tasks:
     - name: Install packackages
       kewlfft.aur.aur: 
+        use: yay
         name:
           - neovim
           - ripgrep
+          

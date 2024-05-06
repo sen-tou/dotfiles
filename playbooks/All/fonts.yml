@@ -4,8 +4,8 @@
   become: yes
   tasks:
     - name: Install fonts
-      pacman:
+      kewlfft.aur.aur:
+        use: yay
         name:
           - ttf-cascadia-code-nerd
           - ttf-terminus-nerd
-        executable: yay

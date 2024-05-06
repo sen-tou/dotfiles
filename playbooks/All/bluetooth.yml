@@ -4,11 +4,11 @@
   become: yes
   tasks:
     - name: Install bluetooth
-      pacman:
+      kewlfft.aur.aur:
+        use: yay
         name:
           - bluez
           - bluez-utils
-        executable: yay
     - name: Enable bluetooth
       systemd:
         name: bluetooth

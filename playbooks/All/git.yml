@@ -4,11 +4,12 @@
   become: no
   tasks:
     - name: Install git
-      pacman:
+      kewlfft.aur.aur:
+        use: yay
+        state: present
         name:
           - git
           - git-delta
-        executable: yay
     - name: Apply git configuration
       git_config:
         name: "{{ item.key }}"

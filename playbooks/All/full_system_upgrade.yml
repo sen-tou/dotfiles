@@ -4,7 +4,7 @@
   connection: local
   tasks:
     - name: Full system upgrade (yay)
-      pacman:
-        executable: yay
+      kewlfft.aur.aur:
+        use: yay
         upgrade: yes
         update_cache: yes

@@ -27,14 +27,7 @@
   connection: local
   tasks:
     - name: Install packackages
-      pacman:
-        executable: yay
+      kewlfft.aur.aur:
+        use: yay
         name:
           - kitty
-    - name: remove packackages
-      pacman:
-        executable: yay
-        name:
-          - alacritty
-          - gnome-terminal
-        state: removed

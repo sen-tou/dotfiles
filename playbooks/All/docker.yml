@@ -4,11 +4,11 @@
   become: true
   tasks:
     - name: Install dependencies
-      pacman:
+      kewlfft.aur.aur:
+        use: yay
         name:
           - docker
           - docker-compose
-        executable: yay
     - name: Enable docker
       systemd:
         name: docker

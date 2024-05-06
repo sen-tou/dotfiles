@@ -5,6 +5,7 @@
   tasks:
     - name: Install packackages
       kewlfft.aur.aur: 
+        use: yay
         name:
           - spotify-launcher
           - keepassxc

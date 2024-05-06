@@ -5,7 +5,7 @@
   tasks:
     - name: Install PHP
       kewlfft.aur.aur: 
+        use: yay
         name:
           - php
           - composer
-        state: latest

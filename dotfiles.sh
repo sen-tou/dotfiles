@@ -67,6 +67,8 @@ cd $DIR
 
 ansible-galaxy install -r requirements.yml
 # ansible-galaxy collection install -r requirements.yml
-ANSIBLE_CONFIG=./ansbible.cfg ansible-playbook --diff local.yml -i ansible_hosts
+ANSIBLE_CONFIG=./ansbible.cfg ansible-playbook --diff local.yml -i ansible_hosts -kK
+# -kK allows for ssh and sudo password to be passed down
+
 
 source "$HOME/.zshrc"
