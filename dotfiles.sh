@@ -3,8 +3,7 @@
 # Init script for dotfiles
 #
 # This script will install and configure everything needed on the system
-# It requires an arch based linux distribution (in my case EndeavourOS)
-# It also requires systemd
+# It requires an arch based linux distribution using systemd
 #
 # ******************************************************************************
 

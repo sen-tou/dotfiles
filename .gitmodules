@@ -1,16 +1,12 @@
-[submodule "playbooks/All/zsh_plugins/fast-syntax-highlighting"]
-	path = playbooks/All/zsh_plugins/fast-syntax-highlighting
+[submodule "zsh_plugins/fast-syntax-highlighting"]
+	path = zsh/zsh_plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
 	shallow = true
-[submodule "playbooks/All/zsh_plugins/z"]
-	path = playbooks/All/zsh_plugins/z
+[submodule "zsh_plugins/z"]
+	path = zsh/zsh_plugins/z
 	url = https://github.com/agkozak/zsh-z.git
 	shallow = true
-[submodule "playbooks/All/zsh_plugins/abbr"]
-	path = playbooks/All/zsh_plugins/abbr
-	url = https://github.com/olets/zsh-abbr
-	shallow = true
-[submodule "playbooks/All/zsh_plugins/autosuggestions"]
-	path = playbooks/All/zsh_plugins/autosuggestions
+[submodule "zsh_plugins/autosuggestions"]
+	path = zsh/zsh_plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 	shallow = true

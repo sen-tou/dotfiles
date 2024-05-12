@@ -27,10 +27,10 @@ zstyle ':completion:*' list-colors '' # colorize completion lists
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01' # colorize kill list
 
 # plugins
-[ -f {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && source {{ plugin_dir }}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-[ -f {{ plugin_dir }}/z/zsh-z.plugin.zsh ] && source {{ plugin_dir }}/z/zsh-z.plugin.zsh
-[ -f {{ plugin_dir }}/abbr/zsh-abbr.plugin.zsh ] && source {{ plugin_dir }}/abbr/zsh-abbr.plugin.zsh
-[ -f {{ plugin_dir }}/autosuggestions/zsh-autosuggestions.plugin.zsh ] && source {{ plugin_dir }}/autosuggestions/zsh-autosuggestions.plugin.zsh
+[ -f zsh_plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && source zsh_plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+[ -f zsh_plugins/z/zsh-z.plugin.zsh ] && source zsh_plugins/z/zsh-z.plugin.zsh
+[ -f zsh_plugins/abbr/zsh-abbr.plugin.zsh ] && source zsh_plugins/abbr/zsh-abbr.plugin.zsh
+[ -f zsh_plugins/autosuggestions/zsh-autosuggestions.plugin.zsh ] && source zsh_plugins/autosuggestions/zsh-autosuggestions.plugin.zsh
 # fzf
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
