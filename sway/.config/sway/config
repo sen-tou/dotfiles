@@ -153,6 +153,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# System Controls:
+#
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
