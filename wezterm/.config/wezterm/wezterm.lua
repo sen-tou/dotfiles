@@ -19,4 +19,9 @@ if hostname == 'Bobbie' then
 	config.font_size = 14.0
 end
 
+-- disable all super keybinds because this clashes with system keybinds
+
+wezterm.log_error(wezterm.gui.default_keys())
+wezterm.log_error(wezterm.gui.default_key_tables())
+
 return config

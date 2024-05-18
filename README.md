@@ -1,7 +1,6 @@
 # Dotfiles
 
-My dotfiles I am using. It has a soft dependency on EndeavourOS for now because I started to create them using that OS.
-I have no idea if it will work on a vanilla arch or Manjaro build.
+My dotfiles I am using. It has a dependency on Arch.
 
 It uses Ansible as automation. I have multiple machines and they get different configs. I achieve this by naming the machines
 and running the script based on host name.
