@@ -1,0 +1,9 @@
+* {
+	font-family: "AnonymicePro Nerd Font"
+}
+
+window#waybar {
+	background: @theme_base_color;
+	border-bottom: 1px solid @unfocused_borders;
+	color: @theme_text_color;
+}

@@ -15,6 +15,8 @@ set $term wezterm
 # on the original workspace that the command was run on.
 set $menu wofi --show=drun width=400 lines=5 
 
+font pango:"AnonymicePro Nerd Font" Regular 12
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
