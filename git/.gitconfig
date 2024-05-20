@@ -1,0 +1,24 @@
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = sen-tou
+	email = sen-tou@users.noreply.github.com
+[add "interactive"]
+	useBuiltin = False
+[core]
+	excludesfile = ~/.gitignore.global
+	pager = delta
+	editor = nvim
+[delta]
+	alwaysnavigate = True
+	alwayslight = False
+[diff]
+	colorMoved = default
+[interactive]
+	diffFilter = delta --color-only
+[merge]
+	conflictstyle = diff3
+[include]
+	path = ~/.gitconfig.local

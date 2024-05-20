@@ -1,9 +1,0 @@
----
-- name: Install yay
-  hosts: all
-  connection: local
-  tasks:
-    - name: Install yay
-      become: true
-      pacman:
-        name: yay

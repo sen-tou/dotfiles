@@ -57,17 +57,8 @@ if ! systemctl is-active --quiet sshd; then
   systemctl enable sshd
 fi
 
-# Install ansible
-if ! command -v ansible &> /dev/null; then
-    sudo pacman -Sy --noconfirm ansible
-fi
-
 cd $DIR
 
-ansible-galaxy install -r requirements.yml
-# ansible-galaxy collection install -r requirements.yml
-ANSIBLE_CONFIG=./ansbible.cfg ansible-playbook --diff local.yml -i ansible_hosts -kK
-# -kK allows for ssh and sudo password to be passed down
-
+source ./setup/install.zsh
 
 source "$HOME/.zshrc"

@@ -47,16 +47,21 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+	git 
+	fzf
+	zoxide
+	ssh-agent
+	F-Sy-H
+)
+
+# Plugin Options
+ZOXIDE_CMD_OVERRIDE=cd
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export MANPATH="/usr/local/man:$MANPATH"
-
-# fzf
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
