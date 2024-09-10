@@ -4,7 +4,8 @@
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	name = sen-tou
-	email = sen-tou@users.noreply.github.com
+	email = 29461308+sen-tou@users.noreply.github.com
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ9JHijar28l5cQaV5p4tcZVhczaFTdW/gxgmC2ZV+oT gitworker
 [add "interactive"]
 	useBuiltin = False
 [core]
@@ -22,3 +23,5 @@
 	conflictstyle = diff3
 [include]
 	path = ~/.gitconfig.local
+[gpg]
+	format = ssh
