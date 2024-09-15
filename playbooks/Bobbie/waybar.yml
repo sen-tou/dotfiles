@@ -1,9 +1,0 @@
----
-- name: Setup waybar
-  hosts: all
-  connection: local
-  tasks:
-    - name: install packages
-      kewlfft.aur.aur: 
-        name:
-          - waybar

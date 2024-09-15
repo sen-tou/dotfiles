@@ -25,7 +25,6 @@ else
 	export EDITOR='nvim'
 fi
 export TERMINAL='wezterm'
-export LANG=en_US.UTF-8
 
 setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST

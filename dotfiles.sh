@@ -3,7 +3,7 @@
 # Init script for dotfiles
 #
 # This script will install and configure everything needed on the system
-# It requires an arch based linux distribution using systemd
+# It requires an arch/debian based linux distribution using systemd
 #
 # ******************************************************************************
 
@@ -25,31 +25,29 @@ if ! sudo test -f "/etc/sudoers.d/$USER"; then
     echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee "/etc/sudoers.d/$USER"
 fi 
 
-# Install ssh
-if ! command -v ssh &> /dev/null; then
-    sudo pacman -Sy --noconfirm openssh
-fi
-
-# Generate ssh key if not exits
-if ! [ -f "$SSH_DIR/id_ed25519" ]; then
-    mkdir -p $SSH_DIR
-    chmod 700 $SSH_DIR
-    
-    tee -a "$SSH_DIR/config" <<EOF
-Host $NAS_HOST	
+# Setup NAS
+chmod 0700 $SSH_DIR 
+SSH_FILE="$SSH_DIR/config"
+touch $SSH_FILE && chmod 0600 $SSH_FILE
+HOST_STRING="Host $NAS_HOST"
+if ! grep -qF "$HOST_STRING" "$SSH_FILE"; then
+    tee -a $SSH_FILE <<EOF
+$HOST_STRING	
     User=$NAS_USER 
     Port=$NAS_PORT
     StrictHostKeyChecking=no	
     UserKnownHostsFile=/dev/null
 EOF
-
-    eval "$(ssh-agent -s)"
 fi
 
 cd $DIR
-echo $DIR
-# source ./setup/install.zsh
+if command -v apt >/dev/null 2>&1; then
+    source ./setup/apt.install.zsh
+elif command -v pacman >/dev/null 2>&1; then
+    source ./setup/pacman.install.zsh
+else
+    echo "This system does not support package install. Skipping"
+fi
 
-stow -t $HOME -d $DIR --restow git 
-
-source "$HOME/.zshrc"
+# Setup home dir
+stow -t $HOME -d $DIR --restow git zsh wezterm
