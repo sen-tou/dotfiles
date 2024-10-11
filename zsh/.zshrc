@@ -50,8 +50,9 @@ plugins=(
 	git 
 	fzf
 	zoxide
-	ssh-agent
 	F-Sy-H
+	# never use the ssh-agent here as it will intefere with the 
+	# native ssh agent e.g. gnome-keyring agent
 )
 
 # Plugin Options

@@ -8,6 +8,7 @@ yay -Syu --noconfirm
 
 # Install apps
 yay -S --noconfirm --needed \
+    stow \
     spotify-launcher \
     keepassxc \
     htop \
