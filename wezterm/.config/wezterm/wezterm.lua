@@ -1,27 +1,39 @@
-local hostname = (function()
-	local handle, error_message = io.popen("hostnamectl hostname", "r")
-	if handle then
-	  local hostname = handle:read("*a")
-	  handle:close()
-	  return hostname:gsub("%s+", "")
-	else
-	  wezterm.log_error("Error reading hostname:" ..  error_message)
-	end
-end)()
+local wez = require "wezterm"
+local utils = require "lua.utils"
 
-local wezterm = require("wezterm")
-local config = wezterm.config_builder()
+local appearance = require "lua.appearance"
+local bar = wez.plugin.require "https://github.com/adriankarlen/bar.wezterm"
+local mappings = require "lua.mappings"
 
-config.color_scheme = "AdventureTime"
-config.font = wezterm.font("AnonymicePro Nerd Font Mono")
-config.font_size = 12.0
-if hostname == 'Bobbie' then
-	config.font_size = 14.0
+local c = {}
+
+if wez.config_builder then
+  c = wez.config_builder()
 end
 
--- disable all super keybinds because this clashes with system keybinds
+-- General configurations
+c.font = wez.font("CaskaydiaCove Nerd Font Mono", { weight = "Medium" })
+c.font_rules = {
+  {
+    italic = true,
+    intensity = "Half",
+    font = wez.font("CaskaydiaCove Nerd Font Mono", { weight = "Medium", italic = true }),
+  },
+}
+c.font_size = 16
+c.adjust_window_size_when_changing_font_size = false
+c.audible_bell = "Disabled"
+c.scrollback_lines = 3000
+c.default_workspace = "main"
+c.status_update_interval = 2000
 
-wezterm.log_error(wezterm.gui.default_keys())
-wezterm.log_error(wezterm.gui.default_key_tables())
+-- appearance
+appearance.apply_to_config(c)
 
-return config
+-- keys
+mappings.apply_to_config(c)
+
+-- bar
+bar.apply_to_config(c, { enabled_modules = { hostname = false } })
+
+return c
