@@ -70,4 +70,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 #
 # Example aliases
 alias v="nvim"
+alias gt="git"
+alias gts="gt status"
+alias gtd="gt diff"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
