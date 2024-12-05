@@ -33,7 +33,9 @@ yay -S --noconfirm --needed \
     git-delta \
     docker \
     docker-compose \
-    zsh
+    zsh \
+    zoxide \
+    wezterm
 
 # Enable services
 sudo systemctl enable --now bluetooth
