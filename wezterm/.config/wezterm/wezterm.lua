@@ -28,9 +28,13 @@ c.audible_bell = "Disabled"
 c.scrollback_lines = 3000
 c.default_workspace = "main"
 c.status_update_interval = 2000
+c.window_close_confirmation = "NeverPrompt"
 -- this needs to be because otherwise the confirm screen
 -- is not showing up
 c.skip_close_confirmation_for_processes_named = {}
+
+-- wezterm is crashing under wayland
+c.enable_wayland = false
 
 -- appearance
 appearance.apply_to_config(c)
