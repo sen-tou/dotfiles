@@ -11,14 +11,11 @@ if wez.config_builder then
 end
 
 -- General configurations
-c.font = wez.font("CaskaydiaCove Nerd Font Mono", {
-    weight = "Medium"
-})
+c.font = wez.font("LiterationMono Nerd Font", {})
 c.font_rules = {{
     italic = true,
     intensity = "Half",
-    font = wez.font("CaskaydiaCove Nerd Font Mono", {
-        weight = "Medium",
+    font = wez.font("LiterationMono Nerd Font", {
         italic = true
     })
 }}
