@@ -21,7 +21,8 @@ yay -S --noconfirm --needed \
     bluez-utils \
     ttf-cascadia-code-nerd \
     ttf-terminus-nerd \
-    ttf-anonymicepro-nerd  \
+    ttf-anonymouspro-nerd \
+    ttf-liberation-mono-nerd \
     neovim \
     ripgrep \
     python \
