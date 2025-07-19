@@ -13,7 +13,6 @@ yay -S --noconfirm --needed \
     keepassxc \
     htop \
     exa \
-    obsidian \
     fzf \
     wl-clipboard \
     pacman-contrib \
@@ -36,8 +35,8 @@ yay -S --noconfirm --needed \
     docker-compose \
     zsh \
     zoxide \
-    wezterm
-
+    alacritty
+    
 # Enable services
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now docker

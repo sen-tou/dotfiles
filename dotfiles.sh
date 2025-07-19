@@ -50,4 +50,4 @@ else
 fi
 
 # Setup home dir
-stow -t $HOME -d $DIR --restow git zsh wezterm alacritty
+stow -t $HOME -d $DIR --restow git zsh alacritty

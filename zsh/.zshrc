@@ -76,3 +76,4 @@ alias gtd="gt diff"
 alias gtp="gt push"
 alias gta="gt add"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
