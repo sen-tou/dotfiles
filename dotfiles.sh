@@ -49,5 +49,4 @@ else
     echo "This system does not support package install. Skipping"
 fi
 
-# Setup home dir
-stow -t $HOME -d $DIR --restow git zsh alacritty
+stow.sh $HOME $DIR

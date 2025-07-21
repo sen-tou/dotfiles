@@ -35,7 +35,7 @@ yay -S --noconfirm --needed \
     docker-compose \
     zsh \
     zoxide \
-    alacritty
+    ghostty
     
 # Enable services
 sudo systemctl enable --now bluetooth
