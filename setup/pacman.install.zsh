@@ -27,7 +27,7 @@ yay -S --noconfirm --needed \
     python \
     python-pip \
     python-pynvim \
-    rust \
+    # rust \
     php \
     composer \
     git-delta \

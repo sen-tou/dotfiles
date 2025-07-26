@@ -49,4 +49,4 @@ else
     echo "This system does not support package install. Skipping"
 fi
 
-stow.sh $HOME $DIR
+./stow.sh $HOME $DIR
