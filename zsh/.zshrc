@@ -24,7 +24,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
 	export EDITOR='nvim'
 fi
-export TERMINAL='wezterm'
+export TERMINAL='ghostty'
+export TERM=xterm-256color 
 
 setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
