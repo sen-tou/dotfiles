@@ -1,0 +1,76 @@
+@import "colors.css_waybar";
+
+* {
+    font-size: 16px;
+    font-family: CaskaydiaCove Nerd Font;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background-translucent;
+    color: @foreground;
+}
+window#waybar box {
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    border: @teal;
+}
+
+tooltip {
+    background-color: @background;
+}
+
+#workspaces button {
+    padding: 0 13px;
+    border: 2px solid transparent;
+}
+#workspaces button:hover {
+    color: @highlight;
+}
+#workspaces button.active {
+    color: @highlight;
+    border-bottom: 2px solid @foreground;
+}
+
+
+#pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: @grey-back;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @green;
+}
+
+#network,
+#bluetooth {
+    padding: 0 5px;
+}

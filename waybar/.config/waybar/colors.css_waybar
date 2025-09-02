@@ -1,0 +1,17 @@
+@define-color orange rgb(224, 125, 19);
+@define-color teal rgba(0, 189, 156, 1);
+@define-color red rgb(220, 57, 106);
+@define-color green rgb(152, 195, 121);
+@define-color pink rgb(218, 112, 214);
+@define-color yellow rgb(230, 198, 47);
+@define-color grey-back rgb(12, 9, 18);
+@define-color foreground rgba(242, 243, 244, 0.75);
+@define-color background rgb(25, 19, 35);
+@define-color background-translucent rgba(25, 19, 35, 0.8);
+@define-color foreground-active rgb(230, 198, 47);
+@define-color background-active rgb(23, 20, 31);
+@define-color foreground-dark rgb(25, 19, 35);
+@define-color badge-background-pink rgb(218, 112, 214);
+@define-color badge-background-teal rgba(0, 189, 156, 1);
+@define-color badge-background-green rgb(152, 195, 121);
+@define-color highlight rgb(230, 198, 47);

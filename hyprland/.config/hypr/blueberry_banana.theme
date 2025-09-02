@@ -4,11 +4,13 @@ $red = rgb(220, 57, 106)
 $green = rgb(152, 195, 121)
 $pink = rgb(218, 112, 214)
 $yellow = rgb(230, 198, 47)
+$grey_back = rgb(12, 9, 18)
 
 $foreground = rgba(242, 243, 244, 0.75)
 $background = rgb(25, 19, 35)
-$active_foreground = $yellow
-$active_background = rgb(23, 20, 31)
+$background_translucent = rgba(25, 19, 35, 0.8)
+$foreground_active = $yellow
+$background_active = rgb(23, 20, 31)
 $foreground_dark = $background
 
 $badge_background_pink = $pink
