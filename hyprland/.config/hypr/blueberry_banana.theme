@@ -1,17 +1,18 @@
-$orange = rgb(e07d13)
-$teal = rgb(00bd9c)
-$red = rgb(dc396a)
-$green = rgb(98c379)
-$pink = rgb(da70d6)
+$orange = rgb(224, 125, 19)
+$teal = rgba(0, 189, 156, 1)
+$red = rgb(220, 57, 106)
+$green = rgb(152, 195, 121)
+$pink = rgb(218, 112, 214)
+$yellow = rgb(230, 198, 47)
 
-$forground = rbg(cccccc)
-$background = rgb(191323)
-$active_foreground = rgba(f9e46b)
-$active_background = rbba(17141f)
+$foreground = rgba(242, 243, 244, 0.75)
+$background = rgb(25, 19, 35)
+$active_foreground = $yellow
+$active_background = rgb(23, 20, 31)
 $foreground_dark = $background
 
 $badge_background_pink = $pink
 $badge_background_teal = $teal
 $badge_background_green = $green
 
-$highlight = rgb(e6c62f)
+$highlight = $yellow
