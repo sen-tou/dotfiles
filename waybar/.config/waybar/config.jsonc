@@ -22,10 +22,11 @@
         "format-icons": {
             "1": "",
             "2": "",
-            "3": "",
+            "3": "",
             "4": "",
             "5": "󰈹",
-            "6": ""
+            "6": "",
+            "7": "󰓓"
         },
         "persistent-workspaces": {
             "DP-1": [
@@ -37,7 +38,9 @@
             "DP-3": [
                 5,
                 6,
-                7,
+                7
+            ],
+            "HDMI-A-1": [
                 8
             ]
         }
@@ -76,9 +79,9 @@
         "interface": "enp6s0",
         "format": "{ifname}",
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈁",
         "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈁",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",

@@ -1,0 +1,45 @@
+[global]
+    monitor = 0
+    geometry = "0x0-30+20"
+    inidicate_hidden = yes
+    shrink = no
+    transparency = 0
+    notification_height = 0
+    seperator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    frame_width = 2
+    frame_color = "#aaa"
+    seperator_color = auto
+    sort = yes 
+    idle_threshhold = 120
+    font = CaskadiaCove Nerd Font
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b%a"
+    alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    hide_duplicate_count = false
+    show_indicators = yes 
+    icon_position = left
+    max_icon_size = 16
+    sticky_history = yes
+    history_length = 20
+    browser = /usr/bin/firefox
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    startup_notification = false
+    verbosity = mesg
+    corner_radius = 3 
+    force_xinerama = false
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_currenet
+[shortcuts]
+
+
+
