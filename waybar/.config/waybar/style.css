@@ -5,41 +5,44 @@
     font-family: CaskaydiaCove Nerd Font;
     padding: 0;
     margin: 0;
-    border: 0;
+    border: none;
+    outline: none;
     border-radius: 0;
     background: none;
     min-height: 0;
 }
 
+button {
+    border: none;
+    border-radius: 0;
+}
+button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: inherit;
+}
+
 window#waybar {
     background-color: @background-translucent;
-    color: @foreground;
-}
-window#waybar box {
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-button {
-    border: @teal;
-}
-
 tooltip {
-    background-color: @background;
+    background: @background;
 }
 
 #workspaces button {
     padding: 0 13px;
-    border: 2px solid transparent;
+    color: @foreground;
 }
 #workspaces button:hover {
     color: @highlight;
 }
 #workspaces button.active {
     color: @highlight;
-    border-bottom: 2px solid @foreground;
 }
 
 

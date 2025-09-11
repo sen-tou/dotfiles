@@ -1,22 +1,22 @@
 
 :root {
---orange: rgb(224, 125, 19);
---teal: rgba(0, 189, 156, 1);
---red: rgb(220, 57, 106);
---green: rgb(152, 195, 121);
---pink: rgb(218, 112, 214);
---yellow: rgb(230, 198, 47);
---grey-back: rgb(12, 9, 18);
---foreground: rgba(242, 243, 244, 0.75);
---background: rgb(25, 19, 35);
---background-translucent: rgba(25, 19, 35, 0.8);
---foreground-active: rgb(230, 198, 47);
---background-active: rgb(23, 20, 31);
---foreground-dark: rgb(25, 19, 35);
---badge-background-pink: rgb(218, 112, 214);
---badge-background-teal: rgba(0, 189, 156, 1);
---badge-background-green: rgb(152, 195, 121);
---highlight: rgb(230, 198, 47);
+--orange: rgba(224,125,19,1);
+--teal: rgba(0,189,156,1);
+--red: rgba(220,57,106,1);
+--green: rgba(152,195,121,1);
+--pink: rgba(218,112,214,1);
+--yellow: rgba(230,198,47,1);
+--grey-back: rgba(12,9,18,1);
+--foreground: rgba(242,243,244,0.75);
+--background: rgba(25,19,35,1);
+--background-translucent: rgba(25,19,35,0.8);
+--foreground-active: rgba(230,198,47,1);
+--background-active: rgba(23,20,31,1);
+--foreground-dark: rgba(25,19,35,1);
+--badge-background-pink: rgba(218,112,214,1);
+--badge-background-teal: rgba(0,189,156,1);
+--badge-background-green: rgba(152,195,121,1);
+--highlight: rgba(230,198,47,1);
     
 }
         
