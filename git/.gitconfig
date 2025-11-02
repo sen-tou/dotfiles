@@ -27,3 +27,5 @@
 	format = ssh
 [commit]
 	gpgsign = true
+[safe]
+	directory = /mnt/syno/git-repos/htw-stuff.git
