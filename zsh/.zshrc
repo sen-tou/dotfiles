@@ -12,6 +12,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="cypher"
 
+export EDITOR=$(which zsh)
+export SYSTEMD_EDITOR=$EDITOR
+export VISUAL=$EDITOR
 export DISABLE_AUTO_TITLE="true"
 export HIST_STAMPS="yyyy-mm-dd"
 export HISTFILE=~/.zsh_history

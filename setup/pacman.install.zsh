@@ -1,18 +1,16 @@
 # Install yay
-sudo pacman -S --needed base-devel git --noconfirm
 if ! command -v -- yay &> /dev/null; then
-    git clone https://aur.archlinux.org/yay.git
-    cd yay && makepkg -si
+    sudo pacman -S --needed base-devel git --noconfirm
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    (cd /tmp/yay && makepkg -si)
 fi
-yay -Syu --noconfirm
 
 # Install apps
 yay -S --noconfirm --needed \
     stow \
-    spotify-launcher \
     keepassxc \
     htop \
-    exa \
+    eza \
     fzf \
     wl-clipboard \
     pacman-contrib \
@@ -27,7 +25,6 @@ yay -S --noconfirm --needed \
     python \
     python-pip \
     python-pynvim \
-    # rust \
     php \
     composer \
     git-delta \
@@ -36,18 +33,18 @@ yay -S --noconfirm --needed \
     zsh \
     zoxide \
     ghostty
-    
+
 # Enable services
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now docker
 sudo systemctl enable --now docker.socket
 
 # User group settings
-sudo usermod -aG docker $USER
+sudo usermod -aG docker "$USER"
 
 # chsh to zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
-    chsh -s $(which zsh)
+    sudo chsh -s "$(which zsh)" "$USER"
 fi
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
@@ -55,16 +52,13 @@ fi
 
 # Install zsh plugins
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 fi
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/F-Sy-H" ]; then
-    git clone https://github.com/z-shell/F-Sy-H.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/F-Sy-H
+    git clone https://github.com/z-shell/F-Sy-H.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/F-Sy-H"
 fi
 
 # Install tmux plugin manager
-if [! -d "$HOME/.tmux/plugins/tpm"]; then
-    mkdir -p "$HOME/.tmux/plugins/tpm"
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 fi
-
-
