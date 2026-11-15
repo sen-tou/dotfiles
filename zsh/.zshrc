@@ -21,7 +21,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 export MANPAGER='nvim +Man!'
-export BROWSWER='firefox'
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='vim'
 else
@@ -55,6 +55,7 @@ plugins=(
 	fzf
 	zoxide
 	F-Sy-H
+	zsh-autosuggestions
 	# never use the ssh-agent here as it will intefere with the 
 	# native ssh agent e.g. gnome-keyring agent
 )
@@ -81,3 +82,5 @@ alias gtp="gt push"
 alias gta="gt add"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
+. "$HOME/.local/bin/env"
