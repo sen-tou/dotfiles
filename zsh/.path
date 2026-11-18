@@ -1,5 +1,6 @@
 [ -d "$HOME/bin" ] && export PATH="$PATH:$HOME/bin"
 [ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
+[ -d "$HOME/projects/llama-cpp/vendor" ] && export PATH="$PATH:$HOME/projects/llama-cpp/vendor"
 [ -d "/usr/local/bin" ] && export PATH="$PATH:/usr/local/bin"
 [ -d /usr/local/go/bin ] && export PATH=$PATH:/usr/local/go/bin
 [ -d $HOME/go/bin ] && export PATH="$PATH:$HOME/go/bin"
